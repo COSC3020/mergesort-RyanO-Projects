@@ -5,14 +5,13 @@ function mergesort(array) {
         return array;
     }
 
-    // Fails with [0,0,0]
     for ( var subLen = 1; subLen < len; subLen *= 2 ) { // Size of "subarrays" to sort for each iteration, doubles each time.
         for ( var start = 0; start < (len-1); start += (2 * subLen) ) { // Iterates over pairs of "subarrays" for sorting.
             var start1 = start;
             var middle = start + subLen;
             var end = start + (2 * subLen);
 
-            while ( start1 < end || middle < end ) {
+            while ( start1 < middle || middle < end ) {
                 if (array[start1] <= array[middle]) {
                     start1++;
                 } 
