@@ -5,7 +5,7 @@ function mergesort(array) {
         return array;
     }
 
-    for ( var subLen = 1; subLen < len; subLen *= 2 ) { // Size of "subarrays" to sort for each iteration, doubles each time.
+    for ( var subLen = 1; subLen < (len-1); subLen *= 2 ) { // Size of "subarrays" to sort for each iteration, doubles each time.
         for ( var start = 0; start < len; start += (2 * subLen) ) { // Iterates over pairs of "subarrays" for sorting.
             var start1 = start;
             var middle = start + subLen;
