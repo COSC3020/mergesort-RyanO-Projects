@@ -5,6 +5,7 @@ function mergesort(array) {
         return array;
     }
 
+    // Keeps failing with odd numbered array lengths.
     for ( var subLen = 1; subLen < len; subLen *= 2 ) { // Size of "subarrays" to sort for each iteration, doubles each time.
         for ( var start = 0; start < (len-1); start += (2 * subLen) ) { // Iterates over pairs of "subarrays" for sorting.
             var start1 = start;
@@ -17,7 +18,7 @@ function mergesort(array) {
                 } 
                     
                 else {
-                    val = array[middle];
+                    var val = array[middle];
                     for ( var i = middle; i > start1; i--) {
                         array[i] = array[i - 1];
                     }
