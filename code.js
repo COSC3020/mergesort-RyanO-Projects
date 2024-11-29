@@ -5,13 +5,14 @@ function mergesort(array) {
         return array;
     }
 
-    for ( var subLen = 1; subLen < len; subLen *= 2 ) { // Size of "subarrays" to sort for each iteration, doubles each time.
-        for ( var start = 0; start < len; start += (2 * subLen) ) { // Iterates over pairs of "subarrays" for sorting.
+    // 
+    for ( var subLen = 1; subLen < len; subLen *= 2 ) { // Size of "subarrays" to sort for each iteration, doubles each time. log_2(n) time
+        for ( var start = 0; start < len; start += (2 * subLen) ) { // Iterates over pairs of "subarrays" for sorting. (n/2*subLen)
             var start1 = start;
-            var middle = start + subLen;    // Math.min(start + subLen, len);
-            var end = start + (2 * subLen);    // Math.min(start + (2 * subLen), len);
+            var middle = Math.min(start + subLen, len);
+            var end = Math.min(start + (2 * subLen), len);
 
-            while ( start1 < middle && middle < end ) {
+            while ( start1 < middle && middle < end ) {    // n time
                 if (array[start1] <= array[middle]) {
                     start1++;
                 } 
@@ -19,7 +20,7 @@ function mergesort(array) {
                 else {
                     var val = array[middle];
                     var i = middle;
-                    while (i > start1) {
+                    while (i > start1) {    // Shift elements rightward. n time
                         array[i] = array[i - 1];
                         i--;
                     }
