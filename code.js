@@ -11,7 +11,7 @@ function mergesort(array) {
             var middle = start + subLen;
             var end = start + (2 * subLen);
 
-            while ( start1 < middle || middle < end ) {
+            while ( start1 < middle && middle < end ) {
                 if (array[start1] <= array[middle]) {
                     start1++;
                 } 
