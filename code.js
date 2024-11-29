@@ -13,14 +13,16 @@ function mergesort(array) {
             var end = start + (2 * subLen);
 
             while ( start1 < middle && middle < end ) {
-                if (array[start1] <= array[middle]) {
+                if (array[start1] <= array[middle]) {    // Test
                     start1++;
                 } 
                     
                 else {
                     var val = array[middle];
-                    for ( var i = middle; i > start1; i--) {
+                    var i = middle;
+                    while (i > start1) {
                         array[i] = array[i - 1];
+                        i--;
                     }
                     array[start1] = val;
                     
