@@ -14,3 +14,5 @@ part of the array each recursive call considers.
 Analyse the time complexity of your implementation and give a $\Theta$ bound for
 its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
+
+The outer for loop doubles subLen at an exponential rate of $2^k$ so its contribution to the runtime is log(n). The "merging" portion of the array has two while loops that each contribute 
